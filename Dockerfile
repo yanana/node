@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM infosiftr/buildpack-deps
 
 RUN apt-get update && apt-get install -y \
 		ca-certificates \
@@ -27,3 +27,7 @@ RUN { \
 RUN make test
 
 RUN make install
+
+# TODO ONBUILD ADD . /usr/src/app
+# TODO ONBUILD WORKDIR /usr/src/app
+# TODO ONBUILD [ ! -e package.json ] || npm install
