@@ -17,9 +17,12 @@ RUN ./configure
 RUN make -j"$(nproc)"
 
 # let's skip a few failing tests for now
+# - "test-fs-readfile-pipe" is only skipped because the index is currently
+#   running Docker 0.11.1, which doesn't create /dev/stdin which it opens
 RUN { \
 		echo 'test-stdout-close-unref: SKIP'; \
 		echo 'test-tls-server-verify: SKIP'; \
+		echo 'test-fs-readfile-pipe: SKIP'; \
 	} >> test/simple/simple.status
 RUN make test
 
