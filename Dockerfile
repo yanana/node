@@ -3,9 +3,6 @@ FROM infosiftr/buildpack-deps
 RUN apt-get update && apt-get install -y \
 		ca-certificates \
 		curl \
-		g++ \
-		gcc \
-		make \
 		openssl \
 		procps \
 		python
