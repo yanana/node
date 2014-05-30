@@ -21,6 +21,7 @@ RUN { \
 		echo 'test-tls-server-verify: SKIP'; \
 		echo 'test-fs-readfile-pipe: SKIP'; \
 		echo 'test-http-pipeline-flood: SKIP'; \
+		echo 'test-debugger-client: SKIP'; \
 	} >> test/simple/simple.status
 RUN make test
 
